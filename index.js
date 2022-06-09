@@ -1,37 +1,59 @@
-//let city = prompt("Enter a city");
-//let ans = city.toLowerCase();
+function date(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-//if (ans === "paris") {
-//  alert("It is currently 19°C in Paris with a humidity of 80%");
-//} else {
-//  alert(
-//    `Sorry, we don't know the weather for this city.Try going to https://www.google.com/search?q=weather+${city}`
-//  );
-//}
-console.log("Hello")
-let now = new Date();
-let p = document.querySelector("p");
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[dayIndex];
 
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  return `${day} ${hours}:${minutes}`;
 }
-let mins = now.getMinutes();
-if (mins < 10) {
-  mins = `0${mins}`;
+
+function displayWeather(response) {
+  document.querySelector("#Country").innerHTML = response.data.name;
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
 }
 
-p.innerHTML = `${day},  ${hours}:${mins}`;
-console.log(day)
+function searchCity(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
 
-function search(event) {
+function submit(event) {
   event.preventDefault();
-  let searchCity = document.querySelector("#city-input");
-  let cityElement = document.querySelector("#Country");
-  cityElement.innerHTML = searchCity.value;
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
 }
+
+function location(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeather);
+}
+
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+dateElement.innerHTML = date(currentTime);
 
 let searchForm = document.querySelector("#searchCity");
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", submit);
+
+searchCity("Singapore");
