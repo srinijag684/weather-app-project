@@ -1,25 +1,25 @@
-.content{
+.content {
     display: block;
     margin: 0% auto;
     text-align: center;
     border: 1px solid black;
     margin: 20px;
     padding: 20px;
-}
-
-.day{
+  }
+  
+  .day {
     padding: 10px;
-}
-
-.week{
+  }
+  
+  .week {
     padding: 10px;
-}
-
-.row .col {
+  }
+  
+  .row .col {
     transition: 0.2ms;
-}
-
-.row .col:hover{
-    color: #fff;
+  }
+  
+  .row .col:hover {
     background: lightblue;
-}
+  }
+  
