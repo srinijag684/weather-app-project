@@ -57,4 +57,3 @@ let searchForm = document.querySelector("#searchCity");
 searchForm.addEventListener("submit", submit);
 
 searchCity("Singapore");
-
