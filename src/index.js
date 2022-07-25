@@ -1,5 +1,7 @@
-//console.log("I'm working");
 
+console.log("I'm working");
+
+/*
 function date(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -59,3 +61,4 @@ let searchForm = document.querySelector("#searchCity");
 searchForm.addEventListener("submit", submit);
 
 searchCity("Singapore");
+*/
