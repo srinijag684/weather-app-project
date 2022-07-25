@@ -2,12 +2,9 @@ function displayTemp(response){
   console.log(response.data.main.temp);
 
   let temperatureElement = document.querySelector("#temp");
-  let cityElement = document.querySelector("#Country");
+ 
+  temperatureElement = response.data.main.temp;
 
-  celsiusTemperature = response.data.main.temp;
-
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  cityElement.innerHTML = response.data.name;
 }
 
 let apiKey = "f6c17ad232aa886321714b7bb48bbe9a";
