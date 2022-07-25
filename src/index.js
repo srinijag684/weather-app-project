@@ -2,7 +2,7 @@ function displayTemp(response){
   let temperatureElement = document.querySelector("#temp");
   let countryElement = document.querySelector("#Country");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  countryElement.innerHTML = Math.round(response.data.name);
+  countryElement.innerHTML =response.data.name;
   console.log(response.data);
 }
 
