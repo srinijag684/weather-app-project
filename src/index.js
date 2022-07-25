@@ -1,5 +1,5 @@
 function displayTemp(response){
-  console.log(response.data.main.temp);
+  //console.log(response.data.main.temp);
 
   let temperatureElement = document.querySelector("#temp");
  
