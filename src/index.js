@@ -1,7 +1,8 @@
 function displayTemp(response){
   console.log(response.data.main.temp);
-  let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
+
+  let temperatureElement = document.querySelector("#temp");
+  let cityElement = document.querySelector("#Country");
 
   celsiusTemperature = response.data.main.temp;
 
