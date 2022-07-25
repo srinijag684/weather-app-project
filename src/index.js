@@ -1,5 +1,5 @@
 function displayTemp(response){
-  console.log(response.data)
+  console.log(response.data.main.temp)
 }
 
 let apiKey = "f6c17ad232aa886321714b7bb48bbe9a";
