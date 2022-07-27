@@ -1,8 +1,10 @@
 function displayTemp(response){
   let temperatureElement = document.querySelector("#temp");
   let countryElement = document.querySelector("#Country");
+  let dateElement = document.querySelector("#date");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   countryElement.innerHTML =response.data.name;
+  dateElement.innerHTML = "Friday 5.00pm"
   console.log(response.data);
 }
 
