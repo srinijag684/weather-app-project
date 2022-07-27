@@ -58,7 +58,6 @@ function search(city){
   axios.get(apiUrl).then(displayTemp);
 }
 
-search("Singapore");
 
 function submit(event){
   event.preventDefault();
@@ -66,6 +65,8 @@ function submit(event){
   console.log(cityInputElement.value);
   search(cityInputElement);
 }
+
+search("Singapore");
 
 let form = document.querySelector("#searchCity");
 form.addEventListener("submit", submit);
