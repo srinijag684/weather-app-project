@@ -31,7 +31,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#week");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
 
