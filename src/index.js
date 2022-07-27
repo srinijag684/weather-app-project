@@ -42,7 +42,7 @@ function displayTemp(response){
   countryElement.innerHTML =response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   descELement.innerHTML = response.data.weather[0].description;
-  windElement.innerHTML = response.data.wind.speed;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 
   let icon = response.data.weather[0].icon;
   iconElement.setAttribute(
