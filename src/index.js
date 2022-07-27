@@ -30,6 +30,13 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#week")
+
+  forecastElement.innerHTML = "Forecast";
+}
+
+
 function displayTemp(response){
   let temperatureElement = document.querySelector("#temp");
   let countryElement = document.querySelector("#Country");
@@ -44,13 +51,14 @@ function displayTemp(response){
   descELement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
+
   let icon = response.data.weather[0].icon;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
     );
 
-  console.log(response.data);
+  //console.log(response.data);
 }
 
 function search(city){
@@ -69,6 +77,7 @@ function submit(event){
 }
 
 search("Singapore");
+displayForecast();
 
 let form = document.querySelector("#searchCity");
 form.addEventListener("submit", submit);
