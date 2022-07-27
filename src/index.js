@@ -53,8 +53,8 @@ function displayTemp(response){
 
 function search(event){
   event.preventDefault();
-  let cityInputElement = document.querySelector("city-input");
-  console.log(cityInputElement.value);
+  let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement);
 }
 
 let apiKey = "f6c17ad232aa886321714b7bb48bbe9a";
