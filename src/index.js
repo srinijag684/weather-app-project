@@ -1,10 +1,15 @@
+function formatDate(timestmap){
+  //calculate the date
+  return "Friday 5.00pm"
+}
+
 function displayTemp(response){
   let temperatureElement = document.querySelector("#temp");
   let countryElement = document.querySelector("#Country");
   let dateElement = document.querySelector("#date");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   countryElement.innerHTML =response.data.name;
-  dateElement.innerHTML = "Friday 5.00pm"
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   console.log(response.data);
 }
 
