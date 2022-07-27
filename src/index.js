@@ -33,7 +33,17 @@ function formatDay(timestamp) {
 function displayForecast(){
   let forecastElement = document.querySelector("#week")
 
-  forecastElement.innerHTML = "Forecast";
+  forecastElement.innerHTML = `
+    <div class="row">
+    <div class="col">
+      <img 
+      src = "http://openweathermap.org/img/wn/10d@2x.png"
+      id="wIcon"
+      />
+      <p id="wTemp">27°</p><br />
+      <p id="wDay">Friday</p>
+    </div>
+    `;
 }
 
 
