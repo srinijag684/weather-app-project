@@ -1,10 +1,11 @@
-function formatDate(timestmap){
+function formatDate(timestamp){
   //calculate the date
-  let date = new Date(timestmap);
-  let hours = timestmap.getHours();
+  let date = new Date(timestamp);
+  let hours = timestamp.getHours();
   let mins = date.getMinutes();
   let day = date.getDay();
   return `${day} ${hours}:${mins}`;
+  console.log(`${day} ${hours}:${mins}`);
 }
 
 function displayTemp(response){
