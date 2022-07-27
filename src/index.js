@@ -39,9 +39,11 @@ function displayTemp(response){
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   countryElement.innerHTML =response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let icon = response.data.weather[0].icon;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/04d@2x.png`
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
     );
 
   console.log(response.data);
