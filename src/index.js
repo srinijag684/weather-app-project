@@ -36,11 +36,13 @@ function displayTemp(response){
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
   let descELement = document.querySelector("#desc");
+  let windElement = document.querySelector("#wind");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   countryElement.innerHTML =response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   descELement.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = response.data.wind.speed;
 
   let icon = response.data.weather[0].icon;
   iconElement.setAttribute(
