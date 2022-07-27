@@ -41,7 +41,7 @@ function displayForecast(){
       id="wIcon"
       />
       <p id="wTemp">27°</p><br />
-      <p id="wDay">Friday</p>
+      <p id="wDay">Monday</p>
     </div>
     `;
 }
