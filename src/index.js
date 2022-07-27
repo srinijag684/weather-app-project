@@ -1,6 +1,10 @@
 function formatDate(timestmap){
   //calculate the date
-  return "Friday 5.00pm"
+  let date = new Date(timestmap);
+  let hours = timestmap.getHours();
+  let mins = date.getMinutes();
+  let day = date.getDay();
+  return `${day} ${hours}:${mins}`;
 }
 
 function displayTemp(response){
