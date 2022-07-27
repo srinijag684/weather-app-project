@@ -40,7 +40,7 @@ function displayTemp(response){
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   countryElement.innerHTML =response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  descELement.innerHTML = capitalize(response.data.weather[0].description);
+  descELement.innerHTML = response.data.weather[0].description;
 
   let icon = response.data.weather[0].icon;
   iconElement.setAttribute(
