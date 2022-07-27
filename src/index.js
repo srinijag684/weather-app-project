@@ -12,4 +12,4 @@ q=Japan&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemp);
 
-console.log("Im running");
+//console.log("Im running");
