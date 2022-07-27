@@ -64,6 +64,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayTemp);
 
 let form = document.querySelector("searchCity");
-form.addEventListener("submit", search);
+form.addEventListener("submit", search());
 
 //console.log("Im running");
