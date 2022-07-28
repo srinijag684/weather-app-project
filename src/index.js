@@ -82,7 +82,7 @@ function displayTemp(response){
     `http://openweathermap.org/img/wn/${icon}@2x.png`
     );
 
-  //console.log(response.data);
+  console.log(response.data);
 }
 
 function search(city){
