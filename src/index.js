@@ -82,7 +82,14 @@ function displayTemp(response){
     `http://openweathermap.org/img/wn/${icon}@2x.png`
     );
 
-  console.log(response.data);
+
+  getForecast(response.data.coord)
+
+  //console.log(response.data);
+}
+
+function getForecast(coords){
+  console.log(coords);
 }
 
 function search(city){
