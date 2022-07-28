@@ -30,7 +30,9 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#week");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -89,11 +91,11 @@ function displayTemp(response){
 }
 
 function getForecast(coords){
-  console.log(coords);
+  //console.log(coords);
   let apiKey = "f6c17ad232aa886321714b7bb48bbe9a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-
+  //console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function search(city){
@@ -112,7 +114,6 @@ function submit(event){
 }
 
 search("Singapore");
-displayForecast();
 
 let form = document.querySelector("#searchCity");
 form.addEventListener("submit", submit);
