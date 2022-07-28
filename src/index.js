@@ -90,6 +90,10 @@ function displayTemp(response){
 
 function getForecast(coords){
   console.log(coords);
+  let apiKey = "f6c17ad232aa886321714b7bb48bbe9a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+
 }
 
 function search(city){
